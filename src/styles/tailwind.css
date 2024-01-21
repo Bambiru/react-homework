@@ -1,9 +1,18 @@
-@import "tailwindcss/base.css";
-@import "tailwindcss/components.css";
-@import "tailwindcss/utilities.css";
+@import 'tailwindcss/base.css';
+/* @import './custom-base-styles.css'; */
+@import 'tailwindcss/components.css';
+/* @import './custom-components.css'; */
+@import 'tailwindcss/utilities.css';
+/* @import './custom-utilities.css'; */
 
-@import "./font.css";
-
-body {
-  @apply bg-black;
-}
+@import './cart.css';
+@import './font.css';
+@import './common.css';
+@import './header.css';
+@import './footer.css';
+@import './detail.css';
+@import './register.css';
+@import './detailModal.css';
+@import './detail.css';
+@import './login.css';
+@import './addCart.css';

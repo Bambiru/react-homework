@@ -20,13 +20,13 @@
 
 ### 폴더 구성 💼
 
-<img width="180" src="../readmeImages/image.png"></img>
+<img width="180" src="/readmeImages/image.png"></img>
 
 ---
 
 ### 코드 수정 💊
 
-<img width="500" src="../readmeImages/image-1.png"></img>
+<img width="500" src="/readmeImages/image-1.png"></img>
 
 - 중복되는 코드가 많아 코드량이 길어지며, 가독성이 떨어졌습니다.
 - 리액트로 넘어오면서 `content`를 객체,배열에 담아 `map`을 이용하여 중복되는 코드를 반복문을 통해 줄여주었습니다.
@@ -71,7 +71,7 @@ const whyKarly = [
 
 ### 결과 🎉
 
-<img width="500" src="../readmeImages/image-2.png"></img>
+<img width="500" src="/readmeImages/image-2.png"></img>
 
 ### 아쉬운 점 & 과제를 하며 느낀 점 😀
 

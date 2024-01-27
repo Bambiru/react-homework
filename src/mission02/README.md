@@ -6,6 +6,7 @@
     <li><a href='#과제 🤗'>과제 🤗</a></li>
     <li><a href='#폴더-구성-'>폴더 구성 💼</a></li>
     <li><a href='#코드-'>코드 💊</a></li>
+    <li><a href='#트러블슈팅😣'>트러블슈팅😣</a></li>
     <li><a href='#결과'>결과 🎉</a></li>
     <li><a href='#아쉬운-점--과제를-하며-느낀-점'>아쉬운 점 😥 & 과제를 하며 느낀 점 😀</a></li>
   </ul>
@@ -86,6 +87,37 @@ export function InfoTable({ data }) {
 }
 
 ```
+
+### 트러블슈팅😣
+<img width="500" src="/readmeImages/image-6.png"></img>
+- 줄바꿈이 적용되던 데이터를 json으로 받아오려고 하니 `<br/>`이 그대로 노출되는 현상이 발생하였다.
+- 찾아보니 `\n`으로 처리 후, `split`를 이용해서 처리할 수 있다고 하여 적용하였다.
+  
+  ```jsx
+  function generateInfoSection(title, content, addContent = "") {
+  return (
+    <div className="info_flex">
+      <dt className="min-w-32">{title}</dt>
+      <dd>
+        <p>
+          {content.split("\n").map((line) => {
+            return (
+              <>
+                {line}
+                <br />
+              </>
+            );
+          })}
+        </p>
+        {addContent}
+      </dd>
+    </div>
+  );
+  }
+  ```
+
+<img width="500" src="/readmeImages/image-7.png"></img>
+
 
 
 ---

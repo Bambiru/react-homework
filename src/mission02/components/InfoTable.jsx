@@ -6,7 +6,16 @@ function generateInfoSection(title, content, addContent = "") {
     <div className="info_flex">
       <dt className="min-w-32">{title}</dt>
       <dd>
-        <p>{content}</p>
+        <p>
+          {content.split("\n").map((line) => {
+            return (
+              <>
+                {line}
+                <br />
+              </>
+            );
+          })}
+        </p>
         {addContent}
       </dd>
     </div>

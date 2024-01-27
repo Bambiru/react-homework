@@ -19,6 +19,9 @@
 - [x] JSON 데이터를 불러와 마크업에 연결하여 UI를 구현하세요.
       필요한 경우, 리스트 렌더링을 활용해보세요.
 
+### 배포 사이트
+https://react-homework-ivory.vercel.app/
+
 ---
 
 ### 폴더 구성 💼

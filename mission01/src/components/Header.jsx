@@ -89,12 +89,27 @@ const category = [
     imgSrc: "/menu/Travel.png",
   },
 ];
+const topBanner = document.querySelector(".top_banner");
+const closeBanner = (e) => {
+  e.preventDefault();
+
+  const closeButton = e.target.closest("button");
+
+  if (closeButton) {
+    topBanner.style.transform = "translateY(-100%)";
+    topBanner.style.transition = "transform .2s ease-out";
+    topBanner.addEventListener("transitionend", () => {
+      topBanner.style.display = "none";
+      // saveBannerStatus();
+    });
+  }
+};
 
 export const Header = () => {
   return (
     <header>
       <div className="w-full bg-white shadow-md z_index">
-        <div className="flex top_banner bg-primary">
+        <div className="flex top_banner bg-primary" onClick={closeBanner}>
           <div className="text-white w-[1050px] mx-auto flex_center py-1">
             <span className="font-light w-[63rem] text-center">
               지금 가입하고 인기상품{" "}

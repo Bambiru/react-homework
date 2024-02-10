@@ -1,0 +1,5 @@
+@import url('./tailwind.css');  
+
+body {
+  font: 1rem / 1.5 "SUIT Variable", "Helvetica Neue", Arial, sans-serif;
+}

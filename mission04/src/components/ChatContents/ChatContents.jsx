@@ -5,7 +5,6 @@ import { ContentContext } from '@/context/Context';
 
 function ChatContents({ scrollRef, sender }) {
   const { contentArray } = useContext(ContentContext);
-  console.log(contentArray);
   return (
     <>
       <div

@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-function ChattingList({ name }) {
+function ChattingList() {
   const pb = new PocketBase('https://jandi-market.pockethost.io');
 
   const [data, setData] = useState(null);
   const { pathname } = useLocation();
   const userId = pathname.split('/')[2];
+
+  const name = sessionStorage.getItem('name');
 
   useEffect(() => {
     let isCancelled = false;
@@ -32,6 +34,13 @@ function ChattingList({ name }) {
       isCancelled = true;
     };
   }, [name]);
+
+  useEffect(() => {
+    pb.collection('chatting').subscribe('*', function (e) {
+      console.log(e.record.content);
+      return e.record.content;
+    });
+  }, []);
 
   return (
     <div className="h-full p-4 bg-gray-200 rounded-lg">

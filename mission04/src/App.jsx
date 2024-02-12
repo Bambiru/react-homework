@@ -1,21 +1,40 @@
 import Chatting from '@/Chatting';
+import { ChattingList, Join, Loading, Login } from './components';
 import { useState } from 'react';
-import { ContentContext, LoadingContext } from '@/context/Context';
+import { ChattingListContext, ContentContext } from '@/context/Context';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const [contentArray, setContentArray] = useState([]);
+  const [chattingList, setChattingList] = useState(null);
+
+  const name = sessionStorage?.getItem('name');
 
   return (
     /* contextAPI사용 */
     <ContentContext.Provider value={{ contentArray, setContentArray }}>
-      <LoadingContext.Provider value={{ loading, setLoading }}>
+      <ChattingListContext.Provider value={{ chattingList, setChattingList }}>
         <div className="flex items-center justify-center w-screen h-screen gap-3">
-          <Chatting chattingRoom={'밤비네 모임'} sender="이정현" />
-          <Chatting chattingRoom={'밤비네 모임'} sender="밤비" />
-          <Chatting chattingRoom={'밤비네 모임'} sender="푸바오" />
+          <div className="h-[600px] flex flex-col gap-3 w-[400px] ">
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Loading />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/join" element={<Join />} />
+                <Route
+                  path="/chat/:id"
+                  element={<ChattingList name={name} />}
+                />
+                <Route
+                  path="/chat/:id/:chattingRoom"
+                  element={<Chatting sender={name} />}
+                />
+              </Routes>
+            </BrowserRouter>
+          </div>
         </div>
-      </LoadingContext.Provider>
+      </ChattingListContext.Provider>
     </ContentContext.Provider>
   );
 }
